@@ -225,10 +225,12 @@
     &lt;button class="btn primary" id="j-select-menu"&gt;默认选中&lt;/button&gt;
 
     &lt;script&gt;
-    // 默认选中
-    $('#j-select-menu').on('click', function(){
-        $('#j-dropdown-ul li').eq(1).trigger('click')
-      })
+     // 默认选中
+        $('#j-select-menu').on('click', function(){
+            $('#j-dropdown-ul li').eq(1).trigger('click')
+          })
+        // 默认选中第一个
+        $('#j-dropdown-ul li').eq(0).trigger('click')
     &lt;/script&gt;
 </code></pre>
             </div>
@@ -391,6 +393,8 @@
         $('#j-select-menu').on('click', function(){
             $('#j-dropdown-ul li').eq(1).trigger('click')
           })
+        // 默认选中第一个
+        $('#j-dropdown-ul li').eq(0).trigger('click')
     })
 </script>
 

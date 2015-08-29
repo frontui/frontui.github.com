@@ -151,7 +151,7 @@
     <section id="type" class="ui-section">
         <h1>分页组件</h1>
         <!-- 分页组件 -->
-        <div class="section-content">
+        <div class="section-content" id="normal">
             <h3>
                 <strong>概述用法</strong>
             </h3>
@@ -184,7 +184,7 @@
         </div>
 
         <!-- 配置 -->
-        <div class="section-content">
+        <div class="section-content" id="config">
             <h3>
                 <strong>参数配置</strong>
             </h3>
@@ -270,7 +270,7 @@
         </div>
 
         <!-- 事件监听 -->
-        <div class="section-content">
+        <div class="section-content" id="event">
             <h3>
                 <strong>事件监听</strong>
             </h3>
@@ -293,10 +293,18 @@
     alert(index);
     index = index || 5;
 
-    $('#j-page').pagination('init', { currentPage: index, items: 50, itemsOnPage: 5,
-    pageStr: {show: true, template: '&lt;p class="pull-left fs-12 lh-26"&gt;当前是{$current}页，
-    共{$pages}页，{$items}条记录，
-    每页显示{$itemsOnPage}条。&lt;/p&gt;'}
+    // 显示总页码
+    //$('#j-page').pagination({ currentPage: index, items: 50, itemsOnPage: 5, pageStr: {show: true}});
+
+    // 自定义总页码模板
+    $('#j-page').pagination({
+        currentPage: index,
+        items: 50,
+        itemsOnPage: 5,
+        pageStr: {
+            show: true,
+            template: '&lt;p class="pull-left fs-12 lh-26"&gt;当前是第{$current}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。&lt;/p&gt;'
+        }
     });
 
     $('#j-page').on('select.ui.pagination', ajaxData);
@@ -329,7 +337,11 @@
             alert(index);
             index = index || 5;
 
-            $('#j-page').pagination({ currentPage: index, items: 50, itemsOnPage: 5, pageStr: {show: true, template: '<p class="pull-left fs-12 lh-26">当前是{$current}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。</p>'}});
+            // 显示总页码
+            //$('#j-page').pagination({ currentPage: index, items: 50, itemsOnPage: 5, pageStr: {show: true}});
+
+            // 自定义总页码模板
+            $('#j-page').pagination({ currentPage: index, items: 50, itemsOnPage: 5, pageStr: {show: true, template: '<p class="pull-left fs-12 lh-26">当前是第{$current}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。</p>'}});
             //alert('现在是5，被重新初始化!');
 
         }
