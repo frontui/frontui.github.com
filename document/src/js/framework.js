@@ -1,0 +1,1 @@
+function noautoform(){for(var o=document.getElementsByTagName("form"),t=0;t<o.length;t++)o[t].setAttribute("autocomplete","off")}noautoform(),$(function(){$("#sh").click(function(){$("#arb").slideToggle()})});

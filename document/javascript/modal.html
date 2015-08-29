@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="copyright" content="本页版权归www.frontpay.cn所有·All Rights Reserved" />
+        <meta name="description" content="xxx" />
+        <meta name="keywords" content="xxx" />
+        <meta name="Robots" content="all" />
+        <title></title>
+        
+        
+
+        
+<link rel="stylesheet" type="text/css" href="/document/src/css/ui.css?v=20150721">
+<!-- 日期选择器样式，独立引入 -->
+<link rel="stylesheet" href="/document/src/css/datetimepicker.css?v=20150721"/>
+
+        
+        <!--[if IE 8]>
+		    <link rel="stylesheet" type="text/css" href="/document/src/css/ie-8.css?v=20150721">
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+		    <link rel="stylesheet" type="text/css" href="/document/src/css/ie-76.css?v=20150721">
+        <![endif]-->
+        
+        <!-- 字体图标兼容 IE 76 样式 （因为 fonticon 的兼容样式在 less 编译中出错，所以直接用 css，不编译）-->   
+        <!--[if lte IE 7]>
+            <link rel="stylesheet" type="text/css" href="/document/src/iconfont-ie7/ie7.css?v=20150721">
+        <![endif]-->
+        <!-- 字体图标 IE 7 以下JS兼容 -->
+        <!--[if lte IE 7]>
+		    <script type="text/javascript" src="/document/src/iconfont-ie7/ie7.js?v=20150721"></script>
+        <![endif]-->
+
+        <!-- html5 Dom 替换方案 以支持IE7 -->
+        <!--[if lte IE 9]>
+		    <script type="text/javascript" src="/document/src/js/html5shiv.js?v=20150721"></script>
+        <![endif]-->
+        <!--[if IE 9]>
+		    <script type="text/javascript" src="/document/src/js/respond.js?v=20150721"></script>
+        <![endif]-->
+
+        
+
+    </head>
+
+    <body >
+        
+        
+<Header></Header>
+<div class="uiShow-body">
+    <!-- ui导航 -->
+    <aside class="uiShow-left">
+        <nav class="ui-sidebar" id="sidebar">
+            <div class="scroll-y-hidden"></div>
+            <ul class="lv1">
+                <li>
+                    <a href="./javascript.html" class="sidebar-btn">JavaScript组件</a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/checkAll.html" class="sidebar-btn">
+                        全选
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/alert.html" class="sidebar-btn">
+                        警告框
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/dropdown.html" class="sidebar-btn">
+                        下拉框
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/tooltips.html" class="sidebar-btn">
+                        tooltips提示
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/placeholder.html" class="sidebar-btn">
+                        占位符
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/switcher.html" class="sidebar-btn">
+                        切换器
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/tab.html" class="sidebar-btn">
+                        TAB选项卡
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/smooth-scroll.html" class="sidebar-btn">
+                        平滑滚动
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/pagination.html" class="sidebar-btn">
+                        分页
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/modal.html" class="sidebar-btn">
+                        弹层
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/notify.html" class="sidebar-btn">
+                        通知
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/datetimepicker.html" class="sidebar-btn">
+                        日历
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="./javascript/charts.html" class="sidebar-btn">
+                        图表
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ui内容 -->
+    <div class="uiShow-right">
+        
+<style>
+    pre{ white-space: pre}
+</style>
+    <section id="type" class="ui-section">
+        <h1>弹层</h1>
+        <!-- 概述用法 -->
+        <div class="section-content">
+            <h3>
+                <strong>概述用法</strong>
+            </h3>
+            <div class="ui-example">
+                <p class="description">
+                    创建拥有不同样式和过渡形式的模态对话框。
+                </p>
+                <p>
+                    HTML结构上参照<code><a target="_blank" href="./ui_1.1.html#modal">ui规范</a></code>
+                </p>
+                <br/>
+                <a href="#modal-1" data-toggle="modal" class="btn default small-btn">a链接打开</a>
+                <button data-target="#modal-1" data-toggle="modal" class="btn default small-btn">button打开</button>
+            </div>
+            <!-- 模拟弹框 -->
+            <div class="modal-background fade display-none" id="modal-1" role="dialog">
+                <div class="modal-layer">
+                    <div class="modal-position">
+                        <div class="modal-wrap">
+                            <div class="modal-head">
+                                modal
+                                <button class="modal-close" title="关闭">
+                                    <i></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限模态窗口高度不限
+                                </div>
+                                <div class="text-align-center margin-top-40px">
+                                    <div class="btn-with-viceLink text-align-center plural-btns">
+                                        <button type="button" class="btn primary">primary</button>
+                                        <button type="button" class="btn secondary">secondary</button>
+                                        <a href="###" class="btn-vicelink">btn-vicelink</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-code">
+<pre>
+    <code>
+        &lt;a href="#modal-1" data-toggle="modal" class="btn default small-btn"&gt;a链接打开 &lt;/a&gt;
+        <br/>
+        &lt;button data-target="#modal-1" data-toggle="modal" class="btn default small-btn"&gt;button打开 &lt;/button&gt;
+    </code>
+</pre>
+            </div>
+        </div>
+
+        <!-- 自定义弹层 -->
+        <div class="section-content">
+            <h3>
+                <strong>自定义弹层</strong>
+            </h3>
+            <div class="ui-example">
+                <p class="description">
+                    我们通过调用<code>jQuery</code>的方法来自定义弹层。
+                </p>
+                <br/>
+                <p>
+                    <button class="btn default small-btn" id="j-pop">弹层</button>
+                </p>
+            </div>
+            <div class="ui-code">
+<pre><code>var i = 0;
+$('#j-pop').on('click', function(){
+    $('#testModal').modal({title: '提示'+ (i++), content: 'aaaa'+ i});
+})
+</code></pre>
+            </div>
+        </div>
+
+        <!-- 事件监听 -->
+        <div class="section-content">
+            <h3>
+                <strong>事件监听</strong>
+            </h3>
+            <div class="ui-example">
+                <br/>
+                <p><code>show.ui.modal</code>监听弹层显示</p>
+                <br/>
+                <p><code>hide.ui.modal</code>监听弹层显示</p>
+
+                <br/>
+                <a href="#modal-2" data-toggle="modal" class="btn default small-btn">a链接打开</a>
+            </div>
+
+            <!-- 模拟弹框 -->
+            <div class="modal-background fade display-none" id="modal-2" role="dialog">
+                <div class="modal-layer">
+                    <div class="modal-position">
+                        <div class="modal-wrap">
+                            <div class="modal-head">
+                                modal
+                                <button class="modal-close" title="关闭">
+                                    <i></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    内容内容
+                                </div>
+                                <div class="text-align-center margin-top-40px">
+                                    <div class="btn-with-viceLink text-align-center plural-btns">
+                                        <button type="button" class="btn primary">primary</button>
+                                        <button type="button" class="btn secondary">secondary</button>
+                                        <a href="###" class="btn-vicelink">btn-vicelink</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-code">
+<pre><code>$('#modal-2').on('show.ui.modal', function(){
+        alert('弹出');
+    });
+    <br/>
+    $('#modal-2').on('hide.ui.modal', function(){
+         alert('隐藏');
+    })
+</code></pre>
+            </div>
+        </div>
+
+
+        <!-- loading -->
+        <div class="section-content">
+            <h3>
+                <strong>加载层</strong>
+            </h3>
+            <div class="ui-example">
+                <br/>
+                <p><code>$(自定义id).showLoading()</code>显示加载层</p>
+                <br/>
+                <p><code>$(自定义id).hideLoading()</code>关闭加载层</p>
+
+                <br/>
+                <a href="#modal-2" id="j-showLoading-btn" class="btn default small-btn">a链接打开</a>
+            </div>
+
+            <div class="ui-code">
+<pre><code>$(function(){
+    $('#j-loading').on('click', function(){
+      $('#myLoading').showLoading('正在处理');
+        setTimeout(function(){
+          $('#myLoading').hideLoading();
+         }, 3000)
+      })
+    })
+</code></pre>
+            </div>
+        </div>
+
+        <!-- 弹框对话框 -->
+        <div class="section-content">
+            <h3>
+                <strong>弹框对话框</strong>
+            </h3>
+            <div class="ui-example">
+                <br>
+                <p>基于<code>modal</code>的带<code>icon</code>弹层, 所有按钮点击默认关闭层</p>
+                <br/>
+                <h4>参数配置</h4>
+                <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            属性
+                        </th>
+                        <th>
+                            描述
+                        </th>
+                        <th>
+                            示例
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>'title'</code></td>
+                        <td><code>提示标题</code></td>
+                        <td><button class="btn default small-btn j-modal" data-id="j-modal-1" data-title="自定义title">自定义title</button></td>
+                    </tr>
+                    <tr>
+                        <td><code>'icon'</code></td>
+                        <td>状态提示图标<code>success|error|info</code></td>
+                        <td><button class="btn default small-btn j-modal" data-id="j-modal-2" data-icon="success" data-title="成功">成功</button></td>
+                    </tr>
+                    <tr>
+                        <td><code>'content'</code></td>
+                        <td><code>提示副标题</code></td>
+                        <td><button class="btn default small-btn j-modal" data-id="j-modal-3" data-icon="info" data-title="排队中" data-content="提示副标题">提示副标题</button></td>
+                    </tr>
+                    <tr>
+                        <td><code>'buttons'</code></td>
+                        <td>自定义按钮<code>
+                            <br>
+                            text 按钮文字
+                            <br>
+                            href 填写了为显示a链接地址不为按钮
+                            <br>
+                            style 按钮样式名，默认 btn primary<br/>
+                            ok 按钮回调
+                        </code></td>
+                        <td><button class="btn default small-btn j-modal" data-id="j-modal-4" data-icon="error" data-title="标题" data-content="副标题" data-ok="callbackOk">自定义按钮</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+
+            <div class="ui-code">
+<pre><code>$('.j-modal').on('click', function(){
+        var data = $(this).data();
+        if(data.ok) {
+            data.buttons = [
+                {
+                    text: '确定',
+                    ok: function(){
+                        alert('我是个2b');
+                    }
+                },
+                {
+                    text: '返回修改',
+                    href: 'pagination.html',
+                    style: 'btn links'
+                }
+            ];
+        }
+        $('#'+data.id).modalLayer(data);
+    })
+</code></pre>
+            </div>
+        </div>
+
+    </section>
+
+    </div>
+</div>
+
+
+        
+        <script type="text/javascript" src="/document/src/js/jquery-1.11.1.min.js?v=20150721"></script>
+        <script type="text/javascript" src="/document/src/js/framework.js?v=20150721"></script>
+
+        
+<script src="/document/src/js/ui/transition.js"></script>
+<script src="/document/src/js/ui/modal.js"></script>
+<script>
+    $(function(){
+        var i = 0;
+        $('#j-pop').on('click', function(){
+            $('#testModal').modal({title: '提示'+ (i++), content: 'aaaa'+i});
+        })
+
+        $('#modal-2').on('show.ui.modal', function(){
+            alert('弹出');
+        });
+
+        $('#modal-2').on('hide.ui.modal', function(){
+            alert('隐藏');
+        })
+
+        // 加载层
+        $('#j-showLoading-btn').on('click', function(){
+            $('#j-showLoading').showLoading();
+
+            setTimeout(function(){
+                $('#j-showLoading').hideLoading();
+            }, 3000)
+        });
+
+        $('.j-modal').on('click', function(){
+            var data = $(this).data();
+            if(data.ok) {
+                data.buttons = [
+                    {
+                        text: '确定',
+                        ok: function(){
+                            alert('我是个2b');
+                        }
+                    },
+                    {
+                        text: '返回修改',
+                        href: 'pagination.html',
+                        style: 'btn links'
+                    }
+                ];
+            }
+            $('#'+data.id).modalLayer(data);
+        })
+    })
+</script>
+
+        
+<script>
+
+    //ui导航点击
+    $(function () {
+
+        var sidebar = $("#sidebar");
+
+        sidebar.find("a").click(function () {
+            $(sidebar).find("li.active").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+
+        var url = location.href;
+        sidebar.find('a').map(function(){
+            if(url.indexOf(this.href) !== -1){
+                sidebar.find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+            }
+        })
+    });
+
+</script>
+
+
+    </body>
+</html>
+
