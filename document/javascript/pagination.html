@@ -141,6 +141,9 @@
     .fs-12{
         font-size: 12px;
     }
+    .lh-26{
+        line-height: 26px;
+    }
     pre{
         white-space: pre;
     }
@@ -249,7 +252,7 @@
                             <td><code>pageStr</code></td>
                             <td><code>{show: false, template: ''}</code>
                                 <br>
-                                模板template默认：<code>&lt;p class="pull-left fs-12 lh-26"&gt;当前是{$currentPage}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。&lt;/p&gt;</code>
+                                模板template默认：<code>&lt;p class="pull-left fs-12 lh-26"&gt;当前是{$current}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。&lt;/p&gt;</code>
                             </td>
                             <td>
                                 显示总页码字符 <br>
@@ -275,7 +278,7 @@
                 <p class="description">
                     添加<code>ui.select.pagination</code>事件可以监听页码切换。
                 </p>
-                <div class="pagination-wrap">
+                <div class="pagination-wrap text-align-center">
                     <ul id="j-page">
 
                     </ul>
@@ -288,14 +291,20 @@
             <div class="ui-code">
 <pre><code>function ajaxData(e, index, instance){
     alert(index);
+    index = index || 5;
 
-    $('#j-page').pagination('init', { currentPage: 5, items: 50, itemsOnPage: 5});
-    alert('现在是5，被重新初始化!');
-    }
+    $('#j-page').pagination('init', { currentPage: index, items: 50, itemsOnPage: 5,
+    pageStr: {show: true, template: '&lt;p class="pull-left fs-12 lh-26"&gt;当前是{$current}页，
+    共{$pages}页，{$items}条记录，
+    每页显示{$itemsOnPage}条。&lt;/p&gt;'}
+    });
+
+    $('#j-page').on('select.ui.pagination', ajaxData);
+}
 
     ajaxData();
 
-    $('#j-page').on('select.ui.pagination', ajaxData);
+
 </code></pre>
             </div>
         </div>
@@ -320,8 +329,9 @@
             alert(index);
             index = index || 5;
 
-            $('#j-page').pagination('init', { currentPage: index, items: 50, itemsOnPage: 5});
+            $('#j-page').pagination({ currentPage: index, items: 50, itemsOnPage: 5, pageStr: {show: true, template: '<p class="pull-left fs-12 lh-26">当前是{$current}页，共{$pages}页，{$items}条记录，每页显示{$itemsOnPage}条。</p>'}});
             //alert('现在是5，被重新初始化!');
+
         }
 
         var inited = false;

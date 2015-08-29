@@ -263,6 +263,20 @@
 }
 
 $('#j-alert-5').alert(ajaxHandler);
+
+/**
+ // 需要传参数使用闭包写法
+ function ajaxHanler(type){
+    return function(alertClose){
+        $.get(url, {type: type}).done(function(){
+                // 关闭警告框
+                alertClose();
+            })
+    }
+ }
+
+ $('#j-alert-5').alert(ajaxHandler(5));
+ */
 </code></pre>
             </div>
         </div>
