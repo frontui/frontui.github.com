@@ -1,1 +1,1 @@
-function noautoform(){for(var o=document.getElementsByTagName("form"),t=0;t<o.length;t++)o[t].setAttribute("autocomplete","off")}noautoform(),$(function(){$("#sh").click(function(){$("#arb").slideToggle()})});
+function noautoform(){for(var t=document.getElementsByTagName("form"),o=0;o<t.length;o++)t[o].setAttribute("autocomplete","off")}noautoform(),$(function(){$("#sh").click(function(){var t=$(this).attr("data-target");$("#arb").slideToggle(function(){$(this).is(":visible")&&$(t).slider("init")})})});
