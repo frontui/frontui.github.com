@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="copyright" content="本页版权归www.frontpay.cn所有·All Rights Reserved" />
+        <meta name="description" content="xxx" />
+        <meta name="keywords" content="xxx" />
+        <meta name="Robots" content="all" />
+        <title></title>
+        
+        
+
+        
+<link rel="stylesheet" type="text/css" href="/document/src/css/ui.css?v=20150721">
+<!-- 日期选择器样式，独立引入 -->
+<link rel="stylesheet" href="/document/src/css/datetimepicker.css?v=20150721"/>
+
+        
+        <!--[if IE 8]>
+		    <link rel="stylesheet" type="text/css" href="/document/src/css/ie-8.css?v=20150721">
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+		    <link rel="stylesheet" type="text/css" href="/document/src/css/ie-76.css?v=20150721">
+        <![endif]-->
+        
+        <!-- 字体图标兼容 IE 76 样式 （因为 fonticon 的兼容样式在 less 编译中出错，所以直接用 css，不编译）-->   
+        <!--[if lte IE 7]>
+            <link rel="stylesheet" type="text/css" href="/document/src/iconfont-ie7/ie7.css?v=20150721">
+        <![endif]-->
+        <!-- 字体图标 IE 7 以下JS兼容 -->
+        <!--[if lte IE 7]>
+		    <script type="text/javascript" src="/document/src/iconfont-ie7/ie7.js?v=20150721"></script>
+        <![endif]-->
+
+        <!-- html5 Dom 替换方案 以支持IE7 -->
+        <!--[if lte IE 9]>
+		    <script type="text/javascript" src="/document/src/js/html5shiv.js?v=20150721"></script>
+        <![endif]-->
+        <!--[if IE 9]>
+		    <script type="text/javascript" src="/document/src/js/respond.js?v=20150721"></script>
+        <![endif]-->
+
+        
+
+    </head>
+
+    <body >
+        
+        
+<Header></Header>
+<div class="uiShow-body">
+    <!-- ui导航 -->
+    <aside class="uiShow-left">
+        <nav class="ui-sidebar" id="sidebar">
+            <div class="scroll-y-hidden"></div>
+            <ul class="lv1">
+                <li>
+                    <a href="/document/components.html" class="sidebar-btn">html模板组件</a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/breadcrumb.html" class="sidebar-btn">
+                        面包屑导航
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/table.html" class="sidebar-btn">
+                        表格
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/pagination.html" class="sidebar-btn">
+                        分页
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/notice.html" class="sidebar-btn">
+                        提示
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/alert.html" class="sidebar-btn">
+                        警告
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/step.html" class="sidebar-btn">
+                        步骤
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/navigator.html" class="sidebar-btn">
+                        导航
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/modal.html" class="sidebar-btn">
+                        弹层
+                    </a>
+                </li>
+                <li class="lv2">
+                    <a href="/document/components/chart.html" class="sidebar-btn">
+                        图表
+                    </a>
+                </li>              
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ui内容 -->
+    <div class="uiShow-right">
+        
+<style>
+    pre{ white-space: pre}
+</style>
+    <section id="type" class="ui-section">
+        <h1>提示</h1>
+        <!-- 警告框结构 -->
+        <div class="section-content">
+            <h3>
+                <strong>结构</strong>
+            </h3>
+
+            <div class="ui-example">
+                <p class="description">
+                    提示模板<code>_components/notice.html</code>包括<code>expand</code>、<code>title</code>、<code>desc</code>、<code>links</code>参数。
+                </p>
+                <br>
+                <br>
+                
+                
+                
+    <div class="notice-wrap success">
+      <div class="notice-box">
+          <span class="notice-img"></span>
+          <h3>
+              ...成功！
+          </h3>
+          <p>
+              预计资金2个工作日到您的银行卡<br/>交易结果以交易记录显示为准
+          </p>
+          <a href="###" class="link-standard">查看提现明细</a>
+      </div>
+  </div>
+
+                
+                
+    <div class="notice-wrap waiting">
+      <div class="notice-box">
+          <span class="notice-img"></span>
+          <h3>
+              正在...
+          </h3>
+          <p>
+              账户余额不足或超出发卡单笔支付限额
+          </p>
+          <a href="###" class="link-standard">重新支付</a><a href="###" class="link-standard link-border">返回我的资产</a>
+      </div>
+  </div>
+
+                
+                
+    <div class="notice-wrap error">
+      <div class="notice-box">
+          <span class="notice-img"></span>
+          <h3>
+              ...失败！
+          </h3>
+          <p>
+              账户余额不足或超出发卡单笔支付限额
+          </p>
+          <a href="###" class="link-standard">重新支付</a><a href="###" class="link-standard link-border">返回我的资产</a>
+      </div>
+  </div>
+
+                
+                
+    <div class="notice-wrap info">
+      <div class="notice-box">
+          <span class="notice-img"></span>
+          <h3>
+              验证中...！
+          </h3>
+          <p>
+              <b>账户正在验证中，预计24小时内完成验证，请耐心等待。</b><br/>审核记过将通过短信发送到您的手机号码。 <br/>验证成功后验证金额可用于交易或提现。
+          </p>
+          <a href="###" class="link-standard">进入账户管理</a>
+      </div>
+  </div>
+
+            </div>
+            <div class="ui-code">
+<pre>
+    <code>
+{_% import "_components/notice.html" as Notice %_}
+
+{_# 成功 #_}
+{_{ Notice.render('success', title='...成功！', desc='预计资金2个工作日到您的银行卡&lt;br/&gt;交易结果以交易记录显示为准',links='&lt;a href="###" class="link-standard"&gt;查看提现明细&lt;/a&gt;') }_}
+
+{_# 等待 #_}
+{_{ Notice.render('waiting', title='正在...', desc='账户余额不足或超出发卡单笔支付限额',links='&lt;a href="###" class="link-standard"&gt;重新支付&lt;/a&gt;&lt;a href="###" class="link-standard link-border"&gt;返回我的资产&lt;/a&gt;') }_}
+
+{_# 出错 #_}
+{_{ Notice.render('error', title='...失败！', desc='账户余额不足或超出发卡单笔支付限额',links='&lt;a href="###" class="link-standard"&gt;重新支付&lt;/a&gt;&lt;a href="###" class="link-standard link-border"&gt;返回我的资产&lt;/a&gt;') }_}
+
+{_# 信息 #_}
+{_{ Notice.render('info', title='验证中...！', desc='&lt;b&gt;账户正在验证中，预计24小时内完成验证，请耐心等待。&lt;/b&gt;&lt;br/&gt;审核记过将通过短信发送到您的手机号码。 &lt;br/&gt;验证成功后验证金额可用于交易或提现。',links='&lt;a href="###" class="link-standard"&gt;进入账户管理&lt;/a&gt;') }_}
+    </code>
+</pre>
+            </div>
+        </div>
+
+
+        <div class="section-content">
+            <h3>
+                <strong>模态窗</strong>
+            </h3>
+
+            <div class="ui-example">
+                <p class="description">
+                    提示模态窗模板<code>Notice.modal</code>包括<code>expand</code>、<code>title</code>、<code>desc</code>参数。
+                </p>
+                
+                
+
+                
+    <div class="notice-wrap success in-modal">
+        <div class="notice-box">
+            <span class="notice-img"></span>
+            <h3>
+                ...成功！
+            </h3>
+            <p>
+               账户正在验证中，预计24小时内完成验证，请耐心等待。
+            </p>
+        </div>
+    </div>
+
+
+                
+    <div class="notice-wrap info in-modal">
+        <div class="notice-box">
+            <span class="notice-img"></span>
+            <h3>
+                ...信息！
+            </h3>
+            <p>
+               账户正在验证中，预计24小时内完成验证，请耐心等待。
+            </p>
+        </div>
+    </div>
+
+
+                
+    <div class="notice-wrap error in-modal">
+        <div class="notice-box">
+            <span class="notice-img"></span>
+            <h3>
+                ...错误！
+            </h3>
+            <p>
+               账户正在验证中，预计24小时内完成验证，请耐心等待。
+            </p>
+        </div>
+    </div>
+
+
+                
+    <div class="notice-wrap waiting in-modal">
+        <div class="notice-box">
+            <span class="notice-img"></span>
+            <h3>
+                ...等待！
+            </h3>
+            <p>
+               账户正在验证中，预计24小时内完成验证，请耐心等待。
+            </p>
+        </div>
+    </div>
+
+
+            </div>
+            <div class="ui-code">
+<pre>
+    <code>
+{_# 模态窗 #_}
+
+{_{ Notice.modal(expand='success', title='...成功！', desc='账户正在验证中，预计24小时内完成验证，请耐心等待。') }_}
+
+{_{ Notice.modal(expand='info', title='...信息！', desc='账户正在验证中，预计24小时内完成验证，请耐心等待。') }_}
+
+{_{ Notice.modal(expand='error', title='...错误！', desc='账户正在验证中，预计24小时内完成验证，请耐心等待。') }_}
+
+{_{ Notice.modal(expand='waiting', title='...等待！', desc='账户正在验证中，预计24小时内完成验证，请耐心等待。') }_}
+    </code>
+</pre>
+            </div>
+        </div>
+
+    </section>
+
+    </div>
+</div>
+
+
+        
+        <script type="text/javascript" src="/document/src/js/jquery-1.11.1.min.js?v=20150721"></script>
+        <script type="text/javascript" src="/document/src/js/framework.js?v=20150721"></script>
+
+        
+<!-- <script src="/document/src/js/ui/pagination.js"></script> -->
+<script>
+    $(function(){
+        function ajaxHandler(alertClose){
+            setTimeout(function(){
+                alert('aaa');
+                alertClose();
+            }, 1000)
+        }
+    })
+</script>
+
+        
+<script>
+
+    //ui导航点击
+    $(function () {
+
+        var sidebar = $("#sidebar");
+
+        sidebar.find("a").click(function () {
+            $(sidebar).find("li.active").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+
+        var url = location.href;
+        sidebar.find('a').map(function(){
+            if(url.indexOf(this.href) !== -1){
+                sidebar.find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+            }
+        })
+    });
+
+</script>
+
+
+    </body>
+</html>
+
