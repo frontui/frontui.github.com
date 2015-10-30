@@ -46,6 +46,9 @@
         <![endif]-->
 
         
+    <link rel="stylesheet" href="/document/src/js/datatables/jquery.dataTables.css">
+    <link rel="stylesheet" href="/document/src/js/datatables/jquery.dataTables.ui.css">
+
 
     </head>
 
@@ -148,7 +151,7 @@
     pre{ white-space: pre-wrap; }
 </style>
     <section id="type" class="ui-section">
-        <h1>选项卡</h1>
+        <h1>jQuery.DataTables</h1>
         <!-- 概述用法 -->
         <div class="section-content">
             <h3>
@@ -156,48 +159,132 @@
             </h3>
             <div class="ui-example">
                 <p class="description">
-                    选项卡组件由一些并列的可点击选项卡标签组成。
+                    <code>DataTables</code>是一款jquery库的table管理插件，它提供了丰富的table管理功能。比如分页，即使搜索和排序。
                 </p>
                 <br/>
                 <p>
-                    由<code>.tabs-btn</code>类启动绑定或<code>data-toggle="tab"</code>绑定。<code>a</code>的锚点或<code>data-taget="#id"</code>对应内容项
+                    <a href="http://www.datatables.net/">Datatables官网</a>
                 </p>
                 <br/>
                 <p>
-                    若要禁止<code>tab</code>插件绑定，只要在<code>.tabs-btn</code>上添加<code>.tabs-disabled</code>类。比如直接链接跳转
+                    <a href="http://dt.thxopen.com/" class="link-starndar">Datatables中文网</a>
                 </p>
                 <br>
-                <p>样式上控制参照UI规范</p>
+                <p>详细用法请阅读官网API</p>
                 <br/>
-                <div class="tabs-wrap type1">
-                    <ul class="tabs">
-                        <li class="active">
-                            <a href="#ttp1" class="tabs-btn" aria-expanded="true">
-                                tab one
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#ttp2" class="tabs-btn" aria-expanded="false">
-                                tab two
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#ttp3" class="tabs-btn" aria-expanded="false">
-                                tab three
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tabs-content">
-                    <div class="tabs-panel active" id="ttp1">
-                        tab one content
-                    </div>
-                    <div class="tabs-panel" id="ttp2">
-                        tab two content
-                    </div>
-                    <div class="tabs-panel" id="ttp3">
-                        tab three content
-                    </div>
+                
+                
+                <div class="table-wrap">
+                    <table class="table inverse">
+                        <thead>
+                            <tr>
+                                <th>
+                                    日期
+                                </th>
+                                <th>
+                                    总资金
+                                </th>
+                                <th>
+                                    收益金额
+                                </th>
+                                <th>
+                                    分润金额
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2015-10-27</td>
+                                <td>1,000,000.00</td>
+                                <td>5,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-26</td>
+                                <td>2,000,000.00</td>
+                                <td>8,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-25</td>
+                                <td>4,000,000.00</td>
+                                <td>2,000.00</td>
+                                <td>9,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-24</td>
+                                <td>12,000,000.00</td>
+                                <td>7,000.00</td>
+                                <td>23,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-23</td>
+                                <td>190,000,000.00</td>
+                                <td>56,000.00</td>
+                                <td>33,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-27</td>
+                                <td>1,000,000.00</td>
+                                <td>5,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-26</td>
+                                <td>2,000,000.00</td>
+                                <td>8,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-25</td>
+                                <td>4,000,000.00</td>
+                                <td>2,000.00</td>
+                                <td>9,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-24</td>
+                                <td>12,000,000.00</td>
+                                <td>7,000.00</td>
+                                <td>23,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-23</td>
+                                <td>190,000,000.00</td>
+                                <td>56,000.00</td>
+                                <td>33,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-27</td>
+                                <td>1,000,000.00</td>
+                                <td>5,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-26</td>
+                                <td>2,000,000.00</td>
+                                <td>8,000.00</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-25</td>
+                                <td>4,000,000.00</td>
+                                <td>2,000.00</td>
+                                <td>9,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-24</td>
+                                <td>12,000,000.00</td>
+                                <td>7,000.00</td>
+                                <td>23,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2015-10-23</td>
+                                <td>190,000,000.00</td>
+                                <td>56,000.00</td>
+                                <td>33,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="ui-code">
@@ -213,62 +300,6 @@
             </div>
         </div>
 
-        <!-- 事件监听 -->
-        <div class="section-content">
-            <h3>
-                <strong>事件监听</strong>
-            </h3>
-            <div class="ui-example">
-                <br/>
-                <p><code>show.ui.tab</code>监听弹层显示前</p>
-                <br/>
-                <p><code>hide.ui.tab</code>监听弹层关闭前</p>
-                <br/>
-                <p><code>shown.ui.tab</code>监听弹层显示后</p>
-                <br/>
-                <p><code>hiden.ui.tab</code>监听弹层显示后</p>
-                <br/>
-                <div class="tabs-wrap type1">
-                    <ul class="tabs" id="j-tab-2">
-                        <li class="active">
-                            <a href="#tp1" class="tabs-btn" aria-expanded="true">
-                                tab one
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#tp2" class="tabs-btn" aria-expanded="false">
-                                tab two
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#tp3" class="tabs-btn" aria-expanded="false">
-                                tab three
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tabs-content">
-                    <div class="tabs-panel active" id="tp1">
-                        tab one content
-                    </div>
-                    <div class="tabs-panel" id="tp2">
-                        tab two content
-                    </div>
-                    <div class="tabs-panel" id="tp3">
-                        tab three content
-                    </div>
-                </div>
-            </div>
-
-            <div class="ui-code">
-<pre><code>$('#j-tab-2 .tabs-btn').on('show.ui.tab', function(){ alert('显示前show')})
-$('#j-tab-2 .tabs-btn').on('shown.ui.tab', function(){ alert('显示后shown')})
-$('#j-tab-2 .tabs-btn').on('hide.ui.tab', function(){ alert('关闭前hide')})
-$('#j-tab-2 .tabs-btn').on('hidden.ui.tab', function(){ alert('关闭后hidden')})
-</code></pre>
-            </div>
-        </div>
-
     </section>
 
     </div>
@@ -280,14 +311,13 @@ $('#j-tab-2 .tabs-btn').on('hidden.ui.tab', function(){ alert('关闭后hidden')
         <script type="text/javascript" src="/document/src/js/framework.js?v=20150721"></script>
 
         
-<script src="/document/src/js/ui/tab.js"></script>
+<script src="/document/src/js/datatables/jquery.dataTables.min.js"></script>
+<script src="/document/src/js/datatables/jquery.dataTables.ui.js"></script>
 <script>
     $(function(){
+        $('.table').dataTable();
 
-        $('#j-tab-2 .tabs-btn').on('show.ui.tab', function(){ alert('显示前show')})
-        $('#j-tab-2 .tabs-btn').on('shown.ui.tab', function(){ alert('显示后shown')})
-        $('#j-tab-2 .tabs-btn').on('hide.ui.tab', function(){ alert('关闭前hide')})
-        $('#j-tab-2 .tabs-btn').on('hidden.ui.tab', function(){ alert('关闭后hidden')})
+        console.log($.fn.DataTable.defaults);
     })
 </script>
 
