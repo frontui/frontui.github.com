@@ -1,1 +1,7 @@
+/*! 
+*  frontui v1.0.2
+*  by frontpay FE Team
+*  (c) 2016-03-25 www.frontpay.cn
+*  Licensed under Apache License
+*/
 !function(t,e){"function"==typeof define&&define.amd?define("ui/alert",["jquery"],e):"object"==typeof exports?module.exports=e("ui/alert",require("jquery")):e(t.jQuery)}(this,function(t){"use strict";function e(e){return t(this).each(function(){var r=t(this),n=r.data("ui.alert");n||r.data("ui.alert",n=new i(this,e)),"string"==typeof e&&n[e].call(t(this))})}var r='[data-dismiss="alert"]',n="em",i=function(e,r){var i=this;"function"==typeof r?t(e).on("click",n,function(){var e=t(this);r(function(){i.close.call(e)})}):t(e).on("click",n,this.close)};return i.VERSION="1.0.0",i.TRANSITION_DURATION=150,i.prototype.close=function(e){function r(){var e=t.Event("closed.ui.alert",{relatedTarget:o});o.detach().remove(),n.trigger(e)}var n=t(this),a=t(this).attr("data-target");a||(a=n.attr("href"),a=a&&a.replace(/.*(?=#[^\s]*$)/,""));var o=t(a);e&&e.preventDefault(),o.length||(o=n.closest(".alert")),o.trigger(e=t.Event("close.ui.alert")),e.isDefaultPrevented()||(o.removeClass("in"),t.support.transition&&o.hasClass("fade")?o.one("uiTransitionEnd",r).emulateTransitionEnd(i.TRANSITION_DURATION):o.fadeOut(i.TRANSITION_DURATION,r))},t.fn.alert=e,t.fn.alert.Constructor=i,t(function(){t(document).on("click.ui.alert",function(e){var n=e.target;t(n).is(r)&&i.prototype.close.call(n,e)})}),t});
