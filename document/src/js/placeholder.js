@@ -1,7 +1,7 @@
 /*! 
 *  frontui v1.0.2
 *  by frontpay FE Team
-*  (c) 2016-03-25 www.frontpay.cn
+*  (c) 4/11/2016 www.frontpay.cn
 *  Licensed under Apache License
 */
 !function(e,t){"function"==typeof define&&define.amd?define("ui/placeholder",["jquery"],t):"object"==typeof exports?module.exports=t(require("jquery")):t(e.jQuery)}(this,function(e){"use strict";function t(){return e(this).each(function(){var t=e(this),l=t.data("ui.placeholder");l||t.data("ui.placeholder",l=new i(this))})}var l="input[placeholder]",o=document.createElement("input"),r="placeholder"in o,i=function(t){var l=this;l.$el=e(t),this.init()};return i.VERSION="1.0.0",i.prototype.init=function(){if(!r){var t=this;if(this.$placeholder=t.$el.data("placeholder"),!r&&!this.$placeholder){var l=t.$el.attr("placeholder");t.$placeholder=e('<label class="form-placeholder" />').html(l),t.$el.data("placeholder",t.$placeholder).before(t.$placeholder)}t.$el.on("focus",e.proxy(this.focus,this)),t.$el.on("blur",e.proxy(this.blur,this)),t.$placeholder.on("click",e.proxy(this.focus,this)),this.blur()}},i.prototype.focus=function(){this.$placeholder.hide()},i.prototype.blur=function(){this.$placeholder[""===this.$el.val()?"show":"hide"]()},e.fn.placeholder=t,e.fn.placeholder.Constructor=i,e(function(){e(l).placeholder()}),i});
