@@ -1,7 +1,7 @@
 /*! 
 *  frontui v1.0.2
 *  by frontpay FE Team
-*  (c) 4/11/2016 www.frontpay.cn
+*  (c) 2016-05-10 www.frontpay.cn
 *  Licensed under Apache License
 */
 !function(t,o){"function"==typeof define&&define.amd?define("ui/smoothScroll",["jquery"],o):"object"==typeof exports?module.exports=o(require("jquery")):o(t.jQuery)}(this,function(t){"use strict";function o(o){return function(){var e=t.Event("done.ui.smoothscroll",{relatedTarget:o});o.trigger(e)}}function e(e,n,r){r=t.extend({},i.DEFAULTS,r);var s=n.offset().top-r.offset,l=t(document).height(),u=t(window).height();s+u>l&&(s=l-u),t("html,body").stop().animate({scrollTop:s},r.duration,r.transition).promise().done([r.complete,o(e)])}function n(o){return t(this).each(function(){var e=t(this),n=e.data("ui.smoothScroll");n?e.trigger("click.ui.smoothScroll"):e.data("ui.smoothScroll",new i(this,t.extend({},e.data(),o)))})}t.easing.easeOutExpo||(t.easing.easeOutExpo=function(t,o,e,n,i){return o==i?e+n:n*(-Math.pow(2,-10*o/i)+1)+e});var i=function(o,e){this.$el=t(o),this.options=e,this.init()};return i.VERSION="1.0.0",i.DEFAULTS={duration:500,transition:"easeOutExpo",offset:0,complete:t.noop},i.prototype.init=function(){this.$el.on("click.ui.smoothScroll",this.scroll(this.$el,this.options))},i.prototype.scroll=function(o,n){return function(i){i.preventDefault(),e(o,t(t(this.hash).length?this.hash:"body"),n)}},t.fn.smoothScroll=n,t.fn.smoothScroll.Constructor=i,t(function(){t('[data-toggle="smooth-scroll"]').smoothScroll()}),i});
