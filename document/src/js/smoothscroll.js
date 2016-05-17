@@ -1,7 +1,0 @@
-/*! 
-*  frontui v1.0.2
-*  by frontpay FE Team
-*  (c) 5/17/2016 www.frontpay.cn
-*  Licensed under Apache License
-*/
-"use strict";function emit(o){return function(){var t=$.Event("done.ui.smoothscroll",{relatedTarget:o});o.trigger(t)}}function scrollToElement(o,t,l){l=$.extend({},SmoothScroll.DEFAULTS,l);var n=t.offset().top-l.offset,i=$(document).height(),e=$(window).height();n+e>i&&(n=i-e),$("html,body").stop().animate({scrollTop:n},l.duration,l.transition).promise().done([l.complete,emit(o)])}function Plugin(o){return $(this).each(function(){var t=$(this),l=t.data("ui.smoothScroll");l?t.trigger("click.ui.smoothScroll"):t.data("ui.smoothScroll",new SmoothScroll(this,$.extend({},t.data(),o)))})}$.easing.easeOutExpo||($.easing.easeOutExpo=function(o,t,l,n,i){return t==i?l+n:n*(-Math.pow(2,-10*t/i)+1)+l});var SmoothScroll=function(o,t){this.$el=$(o),this.options=t,this.init()};SmoothScroll.VERSION="1.0.0",SmoothScroll.DEFAULTS={duration:500,transition:"easeOutExpo",offset:0,complete:$.noop},SmoothScroll.prototype.init=function(){this.$el.on("click.ui.smoothScroll",this.scroll(this.$el,this.options))},SmoothScroll.prototype.scroll=function(o,t){return function(l){l.preventDefault(),scrollToElement(o,$(this.hash).length?$(this.hash):$("body"),t)}},$.fn.smoothScroll=Plugin,$.fn.smoothScroll.Constructor=SmoothScroll,$(function(){$('[data-toggle="smooth-scroll"]').smoothScroll()});

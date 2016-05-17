@@ -1,0 +1,7 @@
+/*! 
+*  frontui v1.0.2
+*  by frontpay FE Team
+*  (c) 5/17/2016 www.frontpay.cn
+*  Licensed under Apache License
+*/
++function(t){"use strict";function e(e){return t(this).each(function(){var a=t(this),n=a.data("ui.alert");n||a.data("ui.alert",n=new r(this,e)),"string"==typeof e&&n[e].call(t(this))})}var a='[data-dismiss="alert"]',n="em",r=function(e,a){var r=this;"function"==typeof a?t(e).on("click",n,function(){var e=t(this);a(function(){r.close.call(e)})}):t(e).on("click",n,this.close)};r.VERSION="1.0.0",r.TRANSITION_DURATION=150,r.prototype.close=function(e){function a(){var e=t.Event("closed.ui.alert",{relatedTarget:o});o.detach().remove(),n.trigger(e)}var n=t(this),i=t(this).attr("data-target");i||(i=n.attr("href"),i=i&&i.replace(/.*(?=#[^\s]*$)/,""));var o=t(i);e&&e.preventDefault(),o.length||(o=n.closest(".alert")),o.trigger(e=t.Event("close.ui.alert")),e.isDefaultPrevented()||(o.removeClass("in"),t.support.transition&&o.hasClass("fade")?o.one("uiTransitionEnd",a).emulateTransitionEnd(r.TRANSITION_DURATION):o.fadeOut(r.TRANSITION_DURATION,a))},t.fn.alert=e,t.fn.alert.Constructor=r,t(function(){t(document).on("click.ui.alert",function(e){var n=e.target;t(n).is(a)&&r.prototype.close.call(n,e)})})}(jQuery);
