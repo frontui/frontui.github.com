@@ -192,17 +192,19 @@
 
             </div>
             <div class="ui-code">
+            
 <pre>
     <code>
-{_% import "_components/step.html" as Step %_}
+{% import "_components/step.html" as Step %}
 
-{_{ Step.render('pass1', '修改密码', '验证密码', '修改成功') }_}
+{{ Step.render("pass1", "修改密码", "验证密码", "修改成功") }}
 
-{_{ Step.render('pass2', '修改密码', '验证密码', '修改成功') }_}
+{{ Step.render("pass2", "修改密码", "验证密码", "修改成功") }}
 
-{_{ Step.render('pass3', '修改密码', '验证密码', '修改成功') }_}
+{{ Step.render("pass3", "修改密码", "验证密码", "修改成功") }}
     </code>
 </pre>
+
             </div>
         </div>
 
